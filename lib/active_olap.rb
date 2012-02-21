@@ -3,6 +3,8 @@ module ActiveOLAP
   def enable_active_olap(config = nil, &block)
 
     self.send(:extend, ClassMethods)
+    self.send(:extend, Utils)
+    
     self.named_scope :olap_drilldown, lambda { |hash| self.olap_drilldown_finder_options(hash) }    
     
     self.cattr_accessor :active_olap_dimensions, :active_olap_aggregates
@@ -100,7 +102,7 @@ module ActiveOLAP
   
 end
 
-
+require "active_olap/utils"
 require 'active_olap/dimension'
 require 'active_olap/category'
 require 'active_olap/aggregate'

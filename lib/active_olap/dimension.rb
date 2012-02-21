@@ -1,7 +1,10 @@
 module ActiveOLAP
   
   class Dimension
-
+    
+    include ActiveOLAP::NamedTimedDimensionHelper 
+    include ActiveOLAP::Utils
+    
     attr_reader :klass
     attr_reader :categories
     attr_reader :category_field
