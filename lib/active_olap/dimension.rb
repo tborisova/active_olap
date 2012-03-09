@@ -2,7 +2,7 @@ module ActiveOLAP
   
   class Dimension
     
-    include ActiveOLAP::NamedTimedDimensionHelper 
+   #include ActiveOLAP::NamedTimedDimensionHelper 
     include ActiveOLAP::Utils
     
     attr_reader :klass
